@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
+import { Uid } from "../app/models/uid.model";
 
 @Injectable({
   providedIn: "root"
@@ -12,7 +13,7 @@ export class ApiService {
   //     console.log(post);
   //   });
   // }
-
+  private ids: Uid[];
   id = 1;
   private dataurl = `/assets/data${this.id}.json`;
 
