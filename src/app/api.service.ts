@@ -12,7 +12,9 @@ export class ApiService {
   //     console.log(post);
   //   });
   // }
-  private dataurl = "/assets/data1.json";
+
+  id = 1;
+  private dataurl = `/assets/data${this.id}.json`;
 
   constructor(private httpClient: HttpClient) {}
 
