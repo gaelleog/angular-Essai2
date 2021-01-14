@@ -15,6 +15,8 @@ export class SearchFileComponent implements OnInit {
   onSubmit(form: NgForm) {
     const uid = form.value["uid"];
     console.log(uid);
-    this.apiService.addUid(uid);
+    this.apiService.getArticles(uid).subscribe(data => {
+      console.log(data);
+    });
   }
 }

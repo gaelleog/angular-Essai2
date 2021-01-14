@@ -5,25 +5,25 @@ import { HttpClient } from "@angular/common/http";
   providedIn: "root"
 })
 export class ApiService {
-
   private couscous = [];
+  private dataurl;
 
-  addUid(uid: string) {
-    const uidRecup = {
-      uid: ''
-    };
-    uidRecup.uid = uid;
-    this.couscous.push(uidRecup);
-    console.log(uid);
-
-  }
-
-  id = this.couscous;
-  private dataurl = `/assets/data${this.id}.json`;
+  // addUid(uid: string) {
+  //   // const uidRecup = {
+  //   //   uid: ''
+  //   // };
+  //   // uidRecup.uid = uid;
+  //   // this.couscous.push(uidRecup);
+  //   console.log(uid);
+  // }
+  // id = 1;
+  // console.log(this.testajine);
+  // private dataurl = `/assets/data${this.testajine}.json`;
 
   constructor(private httpClient: HttpClient) {}
 
-  public getArticles() {
+  public getArticles(uid: string) {
+    this.dataurl = `/assets/data${uid}.json`;
     return this.httpClient.get(this.dataurl);
   }
 }
