@@ -1,22 +1,24 @@
 import { Injectable } from "@angular/core";
 import { HttpClient } from "@angular/common/http";
-import { Uid } from "../app/models/uid.model";
 
 @Injectable({
   providedIn: "root"
 })
 export class ApiService {
 
+  private couscous = [];
+
   addUid(uid: string) {
     const uidRecup = {
       uid: ''
     };
     uidRecup.uid = uid;
+    this.couscous.push(uidRecup);
+    console.log(uid);
+
   }
 
-
-  private ids: Uid[];
-  id = 1;
+  id = this.couscous;
   private dataurl = `/assets/data${this.id}.json`;
 
   constructor(private httpClient: HttpClient) {}
