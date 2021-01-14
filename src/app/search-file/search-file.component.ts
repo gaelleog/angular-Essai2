@@ -10,12 +10,15 @@ import { ApiService } from "../api.service";
 export class SearchFileComponent implements OnInit {
   constructor(private apiService: ApiService) {}
 
+  articles: any;
+
   ngOnInit() {}
 
   onSubmit(form: NgForm) {
     const uid = form.value["uid"];
     console.log(uid);
     this.apiService.getArticles(uid).subscribe(data => {
+      this.articles = data;
       console.log(data);
     });
   }

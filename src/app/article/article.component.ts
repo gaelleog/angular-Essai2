@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, Input, OnInit } from "@angular/core";
 import { ApiService } from "../api.service";
 
 @Component({
@@ -7,7 +7,8 @@ import { ApiService } from "../api.service";
   styleUrls: ["./article.component.css"]
 })
 export class ArticleComponent implements OnInit {
-  articles: any;
+  // articles: any;
+  @Input() articleData: string;
 
   constructor(private apiService: ApiService) {}
 
