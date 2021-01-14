@@ -12,6 +12,7 @@ export class SearchFileComponent implements OnInit {
   ngOnInit() {}
 
   onSubmit(form: NgForm) {
-    console.log(form.value);
+    const uid = form.value["uid"];
+    console.log(uid);
   }
 }

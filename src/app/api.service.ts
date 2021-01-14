@@ -6,13 +6,15 @@ import { Uid } from "../app/models/uid.model";
   providedIn: "root"
 })
 export class ApiService {
-  //   constructor(http:HttpClient) {
-  //   const post$:Observable<Post> = http.get<Post>('/assets/data.json');
-  //   post$.subscribe( post=>{
-  //     this.post = post;
-  //     console.log(post);
-  //   });
-  // }
+
+  addUid(uid: string) {
+    const uidRecup = {
+      uid: ''
+    };
+    uidRecup.uid = uid;
+  }
+
+
   private ids: Uid[];
   id = 1;
   private dataurl = `/assets/data${this.id}.json`;

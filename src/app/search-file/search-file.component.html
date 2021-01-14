@@ -1,7 +1,7 @@
 <form (ngSubmit)="onSubmit(f)" #f="ngForm">
-      <div>
-        <label for="uid">Uid :</label>
-        <input type="text" id="uid" name="uid" ngModel>
+	<div>
+		<label for="uid">Uid :</label>
+		<input type="text" id="uid" name="uid" ngModel required>
     </div>
-    <button type="submit">Enregistrer</button>
+		<button type="submit" [disabled]="f.invalid">Enregistrer</button>
 </form>
